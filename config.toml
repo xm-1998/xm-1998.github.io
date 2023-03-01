@@ -10,7 +10,7 @@ pygmentsUseClasses = true
   description = "Just so so..."
   copyright = "© 夏明 | since 2014"
   dark = "auto"
-  highlight = true
+  highlight = false
 
 [menu]
   [[menu.main]]
