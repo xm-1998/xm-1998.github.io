@@ -1,0 +1,38 @@
+baseURL = "https://xiaming.com.cn/"
+title = "夏明"
+theme = "xiamingcomcn"
+languageCode = "en-US"
+enableInlineShortcodes = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  description = "Just so so..."
+  copyright = "© 夏明 | since 2014"
+  dark = "auto"
+  highlight = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "归档"
+    title = "归档"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    title = "关于"
+    url = "/about/"
+    weight = 20
+
+[permalinks]
+  posts = "/:filename/"
+
+[markup.goldmark.renderer]
+  # Allow HTML in Markdown
+  unsafe = true
+
+  [markup.tableOfContents]
+    ordered = true
