@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Just so so...">
+    
+    <link rel="shortcut icon" href="https://xiaming.com.cn/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="https://xiaming.com.cn/m1-mac-homebrew/" />
+    <title>M1 Mac安装Homebrew</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+</head>
+<body><header id="banner">
+    <h2><a href="https://xiaming.com.cn/">夏明</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title="归档">归档</a>
+            </li><li>
+                <a href="/about/" title="关于">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>M1 Mac安装Homebrew</h1>
+        <div>
+                <time>August 28, 2021</time>
+            </div>
+    </header><p>本文介绍如何在搭载M1芯片的Mac电脑上快速安装Homebrew，我在自己的M1 MacBook Pro上亲测可行！</p>
+<h2 id="下载安装脚本">下载安装脚本</h2>
+<p>进入Homebrew官网（https://brew.sh/）下载安装脚本到本地。</p>
+<h2 id="替换国内镜像源">替换国内镜像源</h2>
+<p>使用编辑器打开Homebrew安装脚本，搜索<code>HOMEBREW_BREW_DEFAULT_GIT_REMOTE</code>和<code>HOMEBREW_CORE_DEFAULT_GIT_REMOTE</code>，将值替换成与下方相对应的地址：</p>
+<pre tabindex="0"><code>https://mirrors.ustc.edu.cn/brew.git
+
+https://mirrors.ustc.edu.cn/homebrew-core.git
+</code></pre><h2 id="安装homebrew">安装Homebrew</h2>
+<p>进入bash终端<code>bash</code>运行安装脚本<code>/bin/bash brew_install</code>，安装完成后退出bash<code>exit</code>。</p>
+<h2 id="添加pash">添加PASH</h2>
+<p>在终端打开.zshrc<code>open ~/.zshrc</code>，如果没有这个文件就新建一个<code>touch .zshrc</code>，添加以下命令：</p>
+<pre tabindex="0"><code>path=(&#39;/opt/homebrew/bin&#39; $path)
+export PATH
+</code></pre><p>最后保存文件，重启终端，输入brew就可以看到Homebrew已经安装成功了！</p>
+</article>
+
+        </main><footer id="footer">
+    © 夏明 | since 2014
+</footer>
+</body>
+</html>

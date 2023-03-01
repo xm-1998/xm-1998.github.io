@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Just so so...">
+    
+    <link rel="shortcut icon" href="https://xiaming.com.cn/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="https://xiaming.com.cn/parallelsdesktopcrack/" />
+    <title>Parallels Desktop Crack</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+</head>
+<body><header id="banner">
+    <h2><a href="https://xiaming.com.cn/">夏明</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title="归档">归档</a>
+            </li><li>
+                <a href="/about/" title="关于">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Parallels Desktop Crack</h1>
+        <div>
+                <time>February 26, 2023</time>
+            </div>
+    </header><p>Crack for Parallels Desktop 18.1.1 53328</p>
+<p>You can contact me if you need.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Support Intel</li>
+<li><input checked="" disabled="" type="checkbox"> Support Apple Silicon (M1 &amp; M2)</li>
+<li><input checked="" disabled="" type="checkbox"> Network</li>
+<li><input checked="" disabled="" type="checkbox"> USB</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<ol>
+<li>
+<p>Install Parallels Desktop.</p>
+<p><a href="https://download.parallels.com/desktop/v18/18.1.1-53328/ParallelsDesktop-18.1.1-53328.dmg">https://download.parallels.com/desktop/v18/18.1.1-53328/ParallelsDesktop-18.1.1-53328.dmg</a></p>
+</li>
+<li>
+<p>Exit parallels account.</p>
+</li>
+<li>
+<p>Download this repo files.</p>
+</li>
+<li>
+<p>Extract and run Terminal in this directory.</p>
+</li>
+<li>
+<p><code>chmod +x ./install.sh &amp;&amp; sudo ./install.sh</code></p>
+</li>
+</ol>
+<p>If you got &ldquo;Operation not permitted&rdquo; error, enable &ldquo;Full Disk Access&rdquo; permission for your Terminal app.</p>
+<p><code>System Preferences ▸ Security &amp; Privacy ▸ Privacy ▸ Full Disk Access</code></p>
+<p>If you got <code>codesign</code> error, ensure xcode command line tools installed. Install with command <code>xcode-select --install</code>.</p>
+<p>Check installed with <code>xcode-select -p</code> will output <code>/Library/Developer/CommandLineTools</code> or <code>/Applications/Xcode.app/Contents/Developer</code>.</p>
+<h2 id="manual">Manual</h2>
+<ol>
+<li>
+<p>Open <code>Parallels Desktop</code> and exit your account.</p>
+</li>
+<li>
+<p>Exit <code>Parallels Desktop</code>.</p>
+</li>
+<li>
+<p>Ensure prl_disp_service not running.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pkill -9 prl_disp_service
+</span></span></code></pre></div><ol start="4">
+<li>Copy cracked <code>prl_disp_service</code> file.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo cp -f prl_disp_service <span class="s2">&#34;/Applications/Parallels Desktop.app/Contents/MacOS/Parallels Service.app/Contents/MacOS/prl_disp_service&#34;</span>
+</span></span><span class="line"><span class="cl">sudo chown root:wheel <span class="s2">&#34;/Applications/Parallels Desktop.app/Contents/MacOS/Parallels Service.app/Contents/MacOS/prl_disp_service&#34;</span>
+</span></span><span class="line"><span class="cl">sudo chmod <span class="m">755</span> <span class="s2">&#34;/Applications/Parallels Desktop.app/Contents/MacOS/Parallels Service.app/Contents/MacOS/prl_disp_service&#34;</span>
+</span></span></code></pre></div><ol start="5">
+<li>Copy fake licenses.json.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo cp -f licenses.json <span class="s2">&#34;/Library/Preferences/Parallels/licenses.json&#34;</span>
+</span></span><span class="line"><span class="cl">sudo chown root:wheel <span class="s2">&#34;/Library/Preferences/Parallels/licenses.json&#34;</span>
+</span></span><span class="line"><span class="cl">sudo chmod <span class="m">444</span> <span class="s2">&#34;/Library/Preferences/Parallels/licenses.json&#34;</span>
+</span></span><span class="line"><span class="cl">sudo chflags uchg <span class="s2">&#34;/Library/Preferences/Parallels/licenses.json&#34;</span>
+</span></span><span class="line"><span class="cl">sudo chflags schg <span class="s2">&#34;/Library/Preferences/Parallels/licenses.json&#34;</span>
+</span></span></code></pre></div><ol start="6">
+<li>Sign <code>prl_disp_service</code> file.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo codesign -f -s - --timestamp<span class="o">=</span>none --all-architectures --entitlements ParallelsService.entitlements <span class="s2">&#34;/Applications/Parallels Desktop.app/Contents/MacOS/Parallels Service.app/Contents/MacOS/prl_disp_service&#34;</span>
+</span></span></code></pre></div><h2 id="notice">Notice</h2>
+<p>Parallels Desktop may upload client info or logs to server.</p>
+<p>You can use a firewall, hosts or custom DNS block there domains.</p>
+<p>This prevents the built-in downloader from working, but you can download prebuilt Virtual Machines via</p>
+<ul>
+<li>Apple Silicon
+<ul>
+<li><a href="https://update.parallels.com/desktop/v18/appliances_arm.xml">https://update.parallels.com/desktop/v18/appliances_arm.xml</a></li>
+<li><a href="https://update.parallels.com/desktop/v18/appliances_arm_Monterey.xml">https://update.parallels.com/desktop/v18/appliances_arm_Monterey.xml</a></li>
+</ul>
+</li>
+<li>Intel
+<ul>
+<li><a href="https://update.parallels.com/desktop/v18/appliances.xml">https://update.parallels.com/desktop/v18/appliances.xml</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="hosts">Hosts</h3>
+<pre tabindex="0"><code>127.0.0.1 download.parallels.com
+127.0.0.1 update.parallels.com
+127.0.0.1 desktop.parallels.com
+127.0.0.1 download.parallels.com.cdn.cloudflare.net
+127.0.0.1 update.parallels.com.cdn.cloudflare.net
+127.0.0.1 desktop.parallels.com.cdn.cloudflare.net
+127.0.0.1 www.parallels.cn
+127.0.0.1 www.parallels.com
+127.0.0.1 www.parallels.de
+127.0.0.1 www.parallels.es
+127.0.0.1 www.parallels.fr
+127.0.0.1 www.parallels.nl
+127.0.0.1 www.parallels.pt
+127.0.0.1 www.parallels.ru
+127.0.0.1 www.parallelskorea.com
+127.0.0.1 reportus.parallels.com
+127.0.0.1 parallels.cn
+127.0.0.1 parallels.com
+127.0.0.1 parallels.de
+127.0.0.1 parallels.es
+127.0.0.1 parallels.fr
+127.0.0.1 parallels.nl
+127.0.0.1 parallels.pt
+127.0.0.1 parallels.ru
+127.0.0.1 parallelskorea.com
+127.0.0.1 pax-manager.myparallels.com
+127.0.0.1 myparallels.com
+127.0.0.1 my.parallels.com
+</code></pre><p>Parallels Desktop will uncomment hosts file, can use this command lock your hosts file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chflags uchg /etc/hosts
+</span></span><span class="line"><span class="cl">sudo chflags schg /etc/hosts
+</span></span></code></pre></div><h3 id="adguardhome">AdGuardHome</h3>
+<p>Add the following rules to your <code>Custom filtering rules</code>:</p>
+<pre tabindex="0"><code>||myparallels.com^$important
+||parallels.cn^$important
+||parallels.com^$important
+||parallels.de^$important
+||parallels.es^$important
+||parallels.fr^$important
+||parallels.nl^$important
+||parallels.pt^$important
+||parallels.ru^$important
+||parallelskorea.com^$important
+||parallels.com.cdn.cloudflare.net^$important
+</code></pre></article>
+
+        </main><footer id="footer">
+    © 夏明 | since 2014
+</footer>
+</body>
+</html>

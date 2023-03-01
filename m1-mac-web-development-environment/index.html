@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Just so so...">
+    
+    <link rel="shortcut icon" href="https://xiaming.com.cn/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="https://xiaming.com.cn/m1-mac-web-development-environment/" />
+    <title>M1 Mac搭建前端开发环境</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+</head>
+<body><header id="banner">
+    <h2><a href="https://xiaming.com.cn/">夏明</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title="归档">归档</a>
+            </li><li>
+                <a href="/about/" title="关于">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>M1 Mac搭建前端开发环境</h1>
+        <div>
+                <time>August 28, 2021</time>
+            </div>
+    </header><p>本文介绍如何在搭载M1芯片的Mac电脑上搭建Web前端开发环境，我在自己的M1 MacBook Pro上亲测可行！</p>
+<h2 id="安装nvm">安装nvm</h2>
+<p>在终端执行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://gitee.com/mirrors/nvm.git ~/.nvm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/.nvm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git checkout <span class="sb">`</span>git describe --abbrev<span class="o">=</span><span class="m">0</span> --tags<span class="sb">`</span>
+</span></span></code></pre></div><h3 id="解决commond-not-foundnvm">解决commond not found:nvm</h3>
+<p>1.进入.nvm文件夹<code>cd ~/.nvm</code></p>
+<p>2.查看有没有.bash_profile文件，如果有的话直接打开<code>open .bash_profile</code>，如果没有的话先新建 <code>touch .bash_profile</code>，新建完成之后打开，粘贴以下代码保存：</p>
+<pre tabindex="0"><code>export NVM_DIR=&#34;$HOME/.nvm&#34;
+[ -s &#34;$NVM_DIR/nvm.sh&#34; ] &amp;&amp; \. &#34;$NVM_DIR/nvm.sh&#34;
+</code></pre><p>3.编译.bash_profile<code>source .bash_profile</code></p>
+<p>4.检查是否可以使用，直接执行<code>nvm</code></p>
+<h3 id="解决每次关闭终端后都需要重新编译bash_profile才能使用nvm">解决每次关闭终端后，都需要重新编译.bash_profile才能使用nvm</h3>
+<p>原因：没有将配置添加到.zshrc文件中</p>
+<p>1.到这里的时候需要看看我们是否有.zshrc文件，如果有就直接打开<code>open ~/.zshrc</code></p>
+<pre tabindex="0"><code>export NVM_DIR=~/.nvm
+[ -s &#34;$NVM_DIR/nvm.sh&#34; ] &amp;&amp; . &#34;$NVM_DIR/nvm.sh&#34;
+</code></pre><p>2.如果没有.zshrc文件，先新建<code>touch .zshrc</code>，新建完成之后打开<code>open -e .zshrc</code>，粘贴<code>source ~/.bash_profile</code>保存，保存完成之后刷新环境<code>source .zshrc</code></p>
+<h2 id="安装nodejs">安装Node.js</h2>
+<p>使用nvm安装Node.js</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm install v14.17.5
+</span></span></code></pre></div><h2 id="安装vs-code">安装VS Code</h2>
+<p>官网：https://code.visualstudio.com/</p>
+</article>
+
+        </main><footer id="footer">
+    © 夏明 | since 2014
+</footer>
+</body>
+</html>
