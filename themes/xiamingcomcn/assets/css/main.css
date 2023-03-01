@@ -60,7 +60,6 @@ header#banner nav ul li a {
 }
 
 main#content a {
-    color: #007dfa;
     color: #313a3d;
     text-decoration: none;
 }
@@ -133,7 +132,7 @@ main#content ul#posts li a {
 }
 
 main#content ul#posts li a:hover {
-    color: #369aff;
+    text-decoration: underline;
 }
 
 main#content ul#posts li a:hover small {
