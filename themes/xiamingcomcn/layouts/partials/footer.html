@@ -1,14 +1,3 @@
 <footer id="footer">
-    <p>
-        {{ .Site.Params.copyright }}
-    </p>
-    <nav>
-        <ul>
-            {{ range .Site.Menus.main.ByWeight -}}
-            <li>
-                {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
-            </li>
-            {{- end }}
-        </ul>
-    </nav>
+    {{ .Site.Params.copyright }}
 </footer>
