@@ -291,11 +291,8 @@ footer#footer a:hover {
     text-decoration: underline;
 }
 
-footer#footer h2 {
+footer#footer p {
     display: inline;
-    font-size: 21px;
-    font-size: 2.1rem;
-    margin: 0 8px 0 0;
 }
 
 footer#footer nav {
