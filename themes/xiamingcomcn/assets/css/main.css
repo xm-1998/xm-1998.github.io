@@ -279,4 +279,42 @@ footer#footer {
     font-weight: 400;
     color: #b3b3b3;
     margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+footer#footer a {
+    color: #313a3d;
+    text-decoration: none;
+}
+
+footer#footer a:hover {
+    text-decoration: underline;
+}
+
+footer#footer h2 {
+    display: inline;
+    font-size: 21px;
+    font-size: 2.1rem;
+    margin: 0 8px 0 0;
+}
+
+footer#footer nav {
+    display: inline-block;
+}
+
+footer#footer nav ul {
+    list-style-type: none;
+    font-size: 1.05em;
+    text-transform: lowercase;
+    margin: 0;
+    padding: 0;
+}
+
+footer#footer nav ul li {
+    display: inline;
+    margin: 0 3px;
+}
+
+header#banner nav ul li a {
+    color: #454545;
 }
