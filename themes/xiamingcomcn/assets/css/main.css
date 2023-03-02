@@ -22,43 +22,6 @@ header#banner {
     margin: 25px 0;
 }
 
-header#banner a {
-    color: #313a3d;
-    text-decoration: none;
-}
-
-header#banner a:hover {
-    text-decoration: underline;
-}
-
-header#banner h2 {
-    display: inline;
-    font-size: 21px;
-    font-size: 2.1rem;
-    margin: 0 8px 0 0;
-}
-
-header#banner nav {
-    display: inline-block;
-}
-
-header#banner nav ul {
-    list-style-type: none;
-    font-size: 1.05em;
-    text-transform: lowercase;
-    margin: 0;
-    padding: 0;
-}
-
-header#banner nav ul li {
-    display: inline;
-    margin: 0 3px;
-}
-
-header#banner nav ul li a {
-    color: #454545;
-}
-
 main#content a {
     color: #313a3d;
     text-decoration: none;
@@ -237,9 +200,7 @@ main#content figure figcaption p {
 
 main#content blockquote {
     font-style: italic;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 50px;
+    margin: 10px 0;
     padding-left: 15px;
     border-left: 3px solid #ccc;
 }
@@ -279,4 +240,32 @@ footer#footer {
     font-weight: 400;
     color: #b3b3b3;
     margin: 40px 0;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+footer#footer .copyright {
+    display: inline-block;
+}
+
+footer#footer nav {
+    display: inline-block;
+}
+
+footer#footer nav ul {
+    list-style-type: none;
+    font-size: 1.05em;
+    text-transform: lowercase;
+    margin: 0;
+    padding: 0;
+}
+
+footer#footer nav ul li {
+    display: inline;
+    margin: 0 3px;
+}
+
+footer#footer nav ul li a {
+    color: #454545;
+    text-decoration: none;
 }
