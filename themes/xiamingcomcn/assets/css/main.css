@@ -22,7 +22,7 @@ header#banner {
     margin: 25px 0;
 }
 
-header#banner img {
+header#banner a img {
     display: inline-block;
     width: 60px;
     height: 60px;
