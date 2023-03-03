@@ -19,12 +19,12 @@ body {
 }
 
 header#banner {
-    margin: 25px 0;
+    margin: 20px 0;
 }
 
 header#banner a img {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
 }
 
