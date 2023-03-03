@@ -278,3 +278,9 @@ footer#footer {
     color: #b3b3b3;
     margin: 40px 0;
 }
+
+main#content .not-found {
+    font-size: 9rem;
+    font-weight: 700;
+    text-align: center;
+}
