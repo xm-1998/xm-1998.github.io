@@ -20,7 +20,6 @@ body {
 
 header#banner {
     margin: 25px 0;
-    text-align-last: justify;
 }
 
 header#banner a {
@@ -33,7 +32,7 @@ header#banner a:hover {
 }
 
 header#banner h2 {
-    display: inline-block;
+    display: inline;
     font-size: 21px;
     font-size: 2.1rem;
     margin: 0 8px 0 0;
@@ -61,7 +60,7 @@ header#banner nav ul li a {
 }
 
 main#content a {
-    color: #313a3d;
+    color: #007dfa;
     text-decoration: none;
 }
 
