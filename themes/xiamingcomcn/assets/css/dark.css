@@ -12,6 +12,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+header#banner a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+header#banner nav ul li a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
 main#content a {
     color: #cccccc;
 }
@@ -34,11 +44,6 @@ main#content ul#posts small {
 
 main#content header#post-header div {
     color: #a7a7a7;
-}
-
-footer#footer nav ul li a {
-    color: #cccccc;
-    text-decoration: none;
 }
 
 {{- if not (eq .Site.Params.dark "on") -}}

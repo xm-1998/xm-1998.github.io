@@ -19,13 +19,39 @@ body {
 }
 
 header#banner {
-    margin: 20px 0;
+    margin: 25px 0;
+    text-align: justify;
+    text-align-last: justify; 
 }
 
-header#banner a img {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
+header#banner a {
+    display: inline-block;
+    color: #454545;
+    text-decoration: none;
+    font-size: 2.3rem;
+}
+
+header#banner nav {
+    display: inline-block;
+}
+
+header#banner nav ul {
+    list-style-type: none;
+    font-size: 1.05em;
+    text-transform: lowercase;
+    margin: 0;
+    padding: 0;
+}
+
+header#banner nav ul li {
+    display: inline;
+    margin: 0 3px;
+}
+
+header#banner nav ul li a {
+    color: #454545;
+    text-decoration: none;
+    font-size: 1.6rem;
 }
 
 main#content a {
@@ -246,32 +272,4 @@ footer#footer {
     font-weight: 400;
     color: #b3b3b3;
     margin: 40px 0;
-    text-align: justify;
-    text-align-last: justify;
-}
-
-footer#footer .copyright {
-    display: inline-block;
-}
-
-footer#footer nav {
-    display: inline-block;
-}
-
-footer#footer nav ul {
-    list-style-type: none;
-    font-size: 1.05em;
-    text-transform: lowercase;
-    margin: 0;
-    padding: 0;
-}
-
-footer#footer nav ul li {
-    display: inline;
-    margin: 0 3px;
-}
-
-footer#footer nav ul li a {
-    color: #454545;
-    text-decoration: none;
 }

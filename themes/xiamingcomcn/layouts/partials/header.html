@@ -1,3 +1,12 @@
 <header id="banner">
-    <a href="/" title="{{ .Site.Title }}"><img src="https://cravatar.cn/avatar/67e0bf9eacf7ea0e7ad74106b8ec7f40?s=80" alt="{{ .Site.Title }}"></a>
+    <a href="/" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+    <nav>
+        <ul>
+            {{ range .Site.Menus.main.ByWeight -}}
+            <li>
+                {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
+            </li>
+            {{- end }}
+        </ul>
+    </nav>
 </header>
