@@ -46,6 +46,7 @@ header#banner nav {
 header#banner nav ul {
     list-style-type: none;
     font-size: 1.05em;
+    text-transform: lowercase;
     margin: 0;
     padding: 0;
 }
@@ -275,5 +276,4 @@ footer#footer {
     font-weight: 400;
     color: #b3b3b3;
     margin: 40px 0;
-    text-align: center;
 }

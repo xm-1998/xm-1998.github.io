@@ -1,5 +1,5 @@
 baseURL = "https://xiaming.com.cn/"
-title = "Summer"
+title = "summer"
 theme = "xiamingcomcn"
 languageCode = "en-US"
 enableInlineShortcodes = true
@@ -14,16 +14,16 @@ pygmentsUseClasses = true
 
 [menu]
   [[menu.main]]
-    identifier = "Posts"
-    name = "Posts"
-    title = "Posts"
+    identifier = "posts"
+    name = "posts"
+    title = "posts"
     url = "/"
     weight = 10
 
   [[menu.main]]
-    identifier = "About"
-    name = "About"
-    title = "About"
+    identifier = "about"
+    name = "about"
+    title = "about"
     url = "/about/"
     weight = 20
 
