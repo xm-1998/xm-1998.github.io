@@ -22,6 +22,14 @@ header#banner {
     margin: 25px 0;
 }
 
+header#banner img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
 main#content a {
     color: #313a3d;
     text-decoration: none;
