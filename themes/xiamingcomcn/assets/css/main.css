@@ -271,16 +271,16 @@ main#content .footnotes {
     font-size: 0.9em;
 }
 
+main#content .notfound {
+    font-size: 9rem;
+    font-weight: 700;
+    text-align: center;
+}
+
 footer#footer {
     font-size: 14px;
     font-size: 1.4rem;
     font-weight: 400;
     color: #b3b3b3;
     margin: 40px 0;
-}
-
-main#content .notfound {
-    font-size: 9rem;
-    font-weight: 700;
-    text-align: center;
 }
