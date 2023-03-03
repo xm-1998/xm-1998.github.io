@@ -46,7 +46,6 @@ header#banner nav {
 header#banner nav ul {
     list-style-type: none;
     font-size: 1.05em;
-    text-transform: lowercase;
     margin: 0;
     padding: 0;
 }
