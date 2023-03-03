@@ -13,13 +13,12 @@ body {
 }
 
 header#banner a {
-    color: #cccccc;
+    color: #e0e0e0;
     text-decoration: none;
 }
 
 header#banner nav ul li a {
     color: #cccccc;
-    text-decoration: none;
 }
 
 main#content a {
