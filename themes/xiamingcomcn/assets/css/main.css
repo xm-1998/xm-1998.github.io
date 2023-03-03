@@ -20,6 +20,7 @@ body {
 
 header#banner {
     margin: 25px 0;
+    text-align-last: justify;
 }
 
 header#banner a {
@@ -32,7 +33,7 @@ header#banner a:hover {
 }
 
 header#banner h2 {
-    display: inline;
+    display: inline-block;
     font-size: 21px;
     font-size: 2.1rem;
     margin: 0 8px 0 0;
