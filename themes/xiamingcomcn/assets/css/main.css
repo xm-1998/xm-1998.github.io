@@ -111,8 +111,9 @@ main#content abbr {
 /* index.html styles */
 main#content ul#posts {
     list-style-type: none;
-    font-size: 16px;
-    font-size: 1.6rem;
+    /* font-size: 16px;
+    font-size: 1.6rem; */
+    font-size: 1.4rem;
     margin-top: 0;
     padding: 0;
 }
