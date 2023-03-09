@@ -27,6 +27,13 @@ pygmentsUseClasses = true
     url = "/about/"
     weight = 20
 
+  [[menu.main]]
+    identifier = "RSS"
+    name = "RSS"
+    title = "RSS"
+    url = "/index.xml"
+    weight = 30
+
 [permalinks]
   posts = "/:filename/"
 
