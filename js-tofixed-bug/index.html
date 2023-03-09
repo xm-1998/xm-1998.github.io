@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hi there 👋">
+    
+    <link rel="shortcut icon" href="https://xiaming.com.cn/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="https://xiaming.com.cn/js-tofixed-bug/" />
+    <title>js中toFixed的bug</title>
+</head>
+<body><header id="banner">
+    <h2><a href="https://xiaming.com.cn/">夏明</a></h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title="首页">首页</a>
+            </li><li>
+                <a href="/about/" title="关于">关于</a>
+            </li><li>
+                <a href="/index.xml" title="RSS">RSS</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>js中toFixed的bug</h1>
+        <div>
+                <time>2023年03月9日</time>
+            </div>
+    </header><p>今天在开发过程中发现了js的<code>toFixed</code>方法在四舍五入的时候有精度问题&hellip;</p>
+<p>按道理<code>console.log((0.15).toFixed(1))</code>控制台应该输出 0.2 的，可是却是 0.1！</p>
+<h2 id="解决办法">解决办法</h2>
+<p>重写Number原型上的toFixed 方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nb">Number</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toFixed</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">decimal</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">number</span> <span class="o">=</span> <span class="k">this</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">decimal</span> <span class="o">=</span> <span class="nx">decimal</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">number</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">decimalIndex</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">decimalIndex</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">fraction</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">decimal</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">fraction</span> <span class="o">+=</span> <span class="s1">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">s</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="nx">fraction</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">numDigits</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="nx">decimalIndex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">numDigits</span> <span class="o">&lt;=</span> <span class="nx">decimal</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">fraction</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">decimal</span> <span class="o">-</span> <span class="nx">numDigits</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">fraction</span> <span class="o">+=</span> <span class="s1">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">s</span> <span class="o">+</span> <span class="nx">fraction</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">digits</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">pos</span> <span class="o">=</span> <span class="nx">decimalIndex</span> <span class="o">+</span> <span class="nx">decimal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">roundDigit</span> <span class="o">=</span> <span class="nx">digits</span><span class="p">[</span><span class="nx">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">roundDigit</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//跳过小数点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">pos</span> <span class="o">==</span> <span class="nx">decimalIndex</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="o">--</span><span class="nx">pos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">digits</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">digits</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//循环进位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span> <span class="p">(</span><span class="nx">digits</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">==</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="nx">pos</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">digits</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">--</span><span class="nx">pos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">pos</span> <span class="o">==</span> <span class="nx">decimalIndex</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="nx">pos</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">digits</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">digits</span><span class="p">[</span><span class="nx">pos</span><span class="p">]</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//避免包含末尾的.符号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">decimal</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">decimal</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">digits</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">decimalIndex</span> <span class="o">+</span> <span class="nx">decimal</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></article>
+
+        </main><footer id="footer">
+    © 夏明
+</footer>
+</body>
+</html>
