@@ -1,0 +1,16 @@
+[posts]
+
+[posts.title]
+other = "文章"
+
+[posts.date]
+other = "2006年01月2日"
+
+
+[post]
+
+[post.created]
+other = "2006年01月2日"
+
+[post.updated]
+other = "2006年01月2日 更新"

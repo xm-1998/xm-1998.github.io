@@ -1,38 +1,30 @@
 baseURL = "https://xiaming.com.cn/"
 title = "夏明"
 theme = "xiamingcomcn"
-languageCode = "en-US"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
 enableInlineShortcodes = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  logo = "summer"
-  description = "Just so so..."
-  copyright = "© 夏明 | since 2014"
+  description = "轻舟已过万重山..."
   dark = "auto"
   highlight = true
 
 [menu]
   [[menu.main]]
-    identifier = "Posts"
-    name = "Posts"
-    title = "Posts"
+    identifier = "Home"
+    name = "首页"
+    title = "首页"
     url = "/"
     weight = 10
 
   [[menu.main]]
     identifier = "About"
-    name = "About"
-    title = "About"
+    name = "关于"
+    title = "关于"
     url = "/about/"
-    weight = 20
-
-  [[menu.main]]
-    identifier = "RSS"
-    name = "RSS"
-    title = "RSS"
-    url = "/index.xml"
     weight = 20
 
 [permalinks]
