@@ -8,7 +8,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  description = "轻舟已过万重山..."
+  description = "Hi there 👋"
   dark = "auto"
   highlight = true
 
